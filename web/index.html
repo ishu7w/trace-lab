@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f4ee">
+<title>Trace Lab · Latency workbench</title>
+<link rel="stylesheet" href="/style.css">
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<header class="mast">
+  <div class="shell mast-inner"><a href="/" class="brand"><span class="mark" aria-hidden="true">⌁</span> Trace Lab</a><span class="mono environment"><i></i> Local environment</span></div>
+</header>
+<main class="shell">
+  <section class="intro" aria-labelledby="title">
+    <div><h1 id="title">Latency workbench</h1><p>Follow a booking through three services. Add 180 ms to Availability, then measure what changes when the delay is removed.</p></div>
+    <button id="run" class="primary" type="button"><span aria-hidden="true">▶</span> Run experiment</button>
+  </section>
+  <div class="route mono" aria-label="Service order: Booking, Availability, Confirmation">
+    <span><i></i> Booking</span><b aria-hidden="true">→</b><span><i></i> Availability</span><b aria-hidden="true">→</b><span><i></i> Confirmation</span>
+  </div>
+  <p id="status" role="status" class="status">Ready · 9 requests per phase</p>
+  <div class="workspace">
+    <section class="panel comparison" aria-labelledby="compare">
+      <div class="panel-head"><h2 id="compare">Latency comparison</h2><span class="mono unit">P95 · MS</span></div>
+      <div id="comparison" class="comparison-content">
+        <p class="empty">Run an experiment to compare baseline, slowdown, and recovery.</p>
+      </div>
+    </section>
+    <section class="panel inspector" aria-labelledby="inspect">
+      <div class="panel-head"><h2 id="inspect">Trace inspector</h2><span class="mono unit">SERVER SPANS</span></div>
+      <div id="inspector" class="inspector-content">
+        <p class="empty">Each measured request produces a trace you can inspect here.</p>
+      </div>
+    </section>
+  </div>
+  <footer><span>Go / OpenTelemetry</span></footer>
+</main>
+</body>
+</html>
